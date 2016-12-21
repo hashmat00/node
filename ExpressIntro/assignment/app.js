@@ -29,7 +29,7 @@ app.get('/repeat/:message/:times', function(req, res) {
     var result =  '';
     
     for(var i=0; i < times; i++){
-        result += message;
+        result += message + " ";
     }
     
     res.send(result);

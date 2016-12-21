@@ -1,0 +1,18 @@
+<!--inlcude header -->
+<% include partials/header %>
+
+
+
+<% posts.forEach(function(post){ %>
+
+<li>
+    <%= post.title %> - <%= post.author %>
+    </li>
+
+<% }) %>
+
+
+
+
+<!--footer area-->
+<% include partials/footer %>
