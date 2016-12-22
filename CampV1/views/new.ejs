@@ -1,0 +1,15 @@
+<% include partials/header %>
+
+<h2>Create new Camping list</h2>
+<div class="container">
+<div class="form-group form-inline">
+
+<form action="/campgrounds" method="POST">
+    <input type="text" placeholder=" enter name" name="name" class="form-control">
+    <input type="text" placeholder="enter image url" name="image" class="form-control">
+    <button class="btn btn-primary">Submit</button>
+</form>
+
+</div>
+</div>
+<% include partials/footer %>
