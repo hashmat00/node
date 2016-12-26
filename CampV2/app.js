@@ -84,7 +84,7 @@ app.post('/campgrounds', function(req, res){
            } else {
               res.redirect('/campgrounds'); 
            }
-       })
+       });
        
        
 });

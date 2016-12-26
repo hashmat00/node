@@ -1,0 +1,16 @@
+<h1>Welcome to blog posts</h1>
+
+
+<% blogs.forEach(function(blog){ %>
+    <div>
+    <p>
+       <%= blog.title %>
+   </p> 
+    
+    <img src="<%= blog.image %>">
+   <p>
+       <%= blog.body %>
+   </p> 
+    
+    </div>
+<%}); %>
