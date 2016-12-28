@@ -1,0 +1,24 @@
+<% include ../partials/header %>
+
+<h1>This is the Show page</h1>
+<p>
+<%= camp.name %>
+</p>
+<p>
+<img src="<%= camp.image %>">
+</p>
+<p>
+<%= camp.descriptions %>
+</p>
+
+<p>
+    <% camp.comments.forEach(function(comment){ %>
+    <p>
+         <%= comment.text %> - <%= comment.author %>
+    </p>
+       
+    <% }); %>
+</p>
+
+
+<% include ../partials/footer %>
