@@ -13,6 +13,7 @@ mongoose.connect("mongodb://localhost/camp-app");
 
 app.use(bodyParser.urlencoded({extendedt:true}));
 app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
 
 
 
