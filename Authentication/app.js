@@ -56,7 +56,7 @@ app.get("/login", function(req, res){
 app.post('/login', passport.authenticate('local', {
     successRedirect: '/secret',
     failureRedirect: '/login'
-}), function(res, res){
+}), function(req, res){
     
 });
 //middleware
@@ -72,9 +72,25 @@ app.get('/', function(req, res){
 
 
 
-app.get('/secret', function(req, res){
-    res.render('secret')
+app.get('/secret',isLoggedIn, function(req, res){
+    res.render('secret');
 });
+
+
+app.get('/logout', function(req, res){
+    req.logout();
+    res.redirect('/login');
+});
+
+
+
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect('/login');
+}
+
 
 
 
