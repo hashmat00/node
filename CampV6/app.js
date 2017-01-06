@@ -43,6 +43,11 @@ function isLoggedIn(req, res, next){
     res.redirect('/login');
 }
 
+// currentUser function 
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
+    next();
+});
 
 // USR ROUTES
 
@@ -121,7 +126,7 @@ app.get('/campgrounds', function(req, res){
 });
 
 // create new 
-app.get('/campgrounds/new', function(req, res) {
+app.get('/campgrounds/new', isLoggedIn, function(req, res) {
     res.render('campgrounds/new');
 });
 
