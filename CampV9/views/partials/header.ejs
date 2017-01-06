@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>hashmat Camp</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheet/main.css">
+    </head>
+    <body>
+        
+   <nav class="navbar navbar-default">
+  <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">HH Camp</a>
+        </div>
+
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <li><a href="/campgrounds">Browse</a></li>
+             <% if(!currentUser) { %>
+                <li><a href="/login">Sign In</a></li>
+                <li><a href="/register">Register</a></li>
+          <% }else{ %>
+                <li><a href="#">Signed in As: <%= currentUser.username %></a></li>
+                <li><a href="/logout">Logout</a></li>
+            <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>
+    
+    
+    
