@@ -19,7 +19,12 @@
                         <h4><a><%=camp.name%></a></h4>
                         <p><%= camp.descriptions %></p>
                         <p>Submitted by: <%= camp.author.username %></p>
-                        <a class='btn btn-warning' href='/campgrounds/<%= camp._id%>/edit'>Edit Campground</a>
+                        <a class='btn btn-warning' href='/campgrounds/<%= camp._id%>/edit'>Edit Camp</a>
+                        
+                        <form id='delete' action='/campgrounds/<%= camp._id %>?_method=DELETE' method='POST'>
+                            <button class='btn btn-danger'>Delete</button>
+                        </form>
+                        
                     </div>
                 
             </div>
