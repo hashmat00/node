@@ -6,7 +6,9 @@ var express              = require("express"),
       LocalStrategy         = require("passport-local"),
       passportLocalMongoose =   require("passport-local-mongoose"),
       User                  = require("./models/user"),
-      methodOverride        = require("method-override");
+      methodOverride        = require("method-override"),
+      Campground            = require("./models/campground")
+      
       
       
       var commentsRoute = require("./routes/comments"),
@@ -56,8 +58,29 @@ app.use("/", indexRoute);
 app.use("/campgrounds", campgroundRoute);
 app.use("/campgrounds/:id/comments", commentsRoute);
 
+app.get('/users', function(req, res){
+        User.find({}, function(err, showUser){
+            if(err){
+                console.log('something went wrong');
+            } else {
+                res.render('users', {users: showUser});
+            }
+        });
+       
+});
 
 
+
+app.get('/users/:id', function(req, res){
+    User.findById(req.params.id, function(err, foundUser){
+            
+        if(err){
+            console.log(err);
+        }else{
+            res.render('profile', {profile: foundUser});
+        }
+    });
+});
 
 
 
